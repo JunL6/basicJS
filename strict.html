@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>With "use strict":</h2>
+<h3>Using a variable without declaring it, is not allowed.</h3>
+
+<p>Activate debugging in your browser (F12) to see the error report.</p>
+<p id="demo">To be shown</p>
+
+<script>
+//"use strict";
+//x = 3.14;    // This will cause an error (x is not defined).
+//document.getElementById("demo").innerHTML = x;
+    
+    
+"use strict";
+var obj = {};
+Object.defineProperty(obj, "x", {value:0, writable:false});
+//debugger;
+a = 14;
+a = a + 1;
+//obj.x = 3.14;   // This will cause an error
+//debugger;
+document.getElementById('demo').innerHTML = obj.x + a;
+var a;
+    
+    
+
+</script>
+
+</body>
+</html>

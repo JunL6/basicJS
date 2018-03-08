@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var myObject = {
+            firstName: "Miamoto",
+            getName() {
+                return this.firstName;
+            },
+        }
+            
+         function abc(){
+            firstName= "Miamoto";
+		return {
+
+		 setname: function(name) {
+              firstName = name;
+            },
+
+            getname:function(){
+                console.log(firstName);
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+
+<h2>Click the button to display date</h2>
+
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+    
+<p id="demo"></p>
+
+
+</body>
+</html> 

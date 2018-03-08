@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StartPage</title>
+    
+    <style>
+        body {
+            user-select: none;
+            -webkit-user-select: none;
+            font-size: 28px;
+        }
+    
+        
+        .participant {
+            width: 400px;
+            margin: auto;  
+            margin-top: 4em;
+        }
+        
+        #in {
+            font-size: 20px;
+        }
+        
+        .btn_start {
+            display: block;
+            margin-top: 1em;
+            margin-left: 2em;
+            padding: 4px 1em;
+            text-align: center;
+            font-size: 28px;
+            background-color: aqua;
+            border-radius: 100px;
+            border-color: transparent;
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.18);
+            transition: 0.3s;
+        }
+        
+        .btn_start:hover {
+            opacity: 0.5;
+        }
+        
+        .form-radio {
+            width: 100px;
+            height: 100px;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    
+    <div class="participant">
+        <span>Participant ID:</span>
+        <input type="number" id="in" value="0" >
+        <button class="btn_start" type="submit" value="Start" onclick="setId()">Start</button>
+    </div>
+    <p id="op">aaa</p>
+    
+    
+    
+    
+    
+    
+<!-- *************************Script*********************************   -->
+    
+<script>
+    //把输入的数字存进cookie
+    var participant_id = 0;
+    function setId(){
+//        participant_id = ("#in").val();
+        participant_id = document.getElementById("in").value;
+//        document.getElementById("op").textContent = participant_id;
+        document.cookie = "participantId =" + participant_id + "; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+        document.getElementById("op").textContent = getCookieByName("participantId");
+    }
+         
+        
+    function getCookieByName(cname){
+//        var name;
+//        name = cname;
+        var ac = {};
+        var cookieList = {};
+        ac = document.cookie.split(";");
+
+        //把cookie变成name-value键值对
+        var c = {};
+        var i;
+
+        for(i=0; i<ac.length; i++) {
+//            document.write("<br>" + "ac[i] = " + ac[i]);
+            c = ac[i].split("=");
+            //testing
+//            document.getElementById("op2").textContent = c[0];
+            if(c.length > 1){
+                cookieList[c[0].trim()] = unescape(c[1]);
+//                document.write(c[0].trim() + " : " + c[1] + "<br>");
+            }
+        }
+//        document.wirte(cookieList[cname]);
+        return cookieList[cname];
+    } 
+
+
+</script>
+    
+</body>
+
+</html>

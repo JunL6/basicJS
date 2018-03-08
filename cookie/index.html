@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>1</h1>
+    <p id="output"></p>
+    <a href="test.html">TO test.html</a>
+    <a href="index2.html">TO 2.html</a>
+    
+<script>
+    var participant_id;
+    //set cookies
+//    document.cookie = "username=John Doe";
+    
+    document.cookie = "a =" + participant_id + "; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    document.cookie = "b = 200; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    document.cookie = "c = 300; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    
+    //show cookies
+//    document.getElementById("output").textContent = document.cookie;
+//    document.write(document.cookie);
+    
+     function getCookieByName(cname){
+//        var name;
+//        name = cname;
+        var ac = {};
+        var cookieList = {};
+        ac = document.cookie.split(";");
+
+        //把cookie变成name-value键值对
+        var c = {};
+        var i;
+        
+        for(i=0; i<ac.length; i++) {
+//            document.write("<br>" + "ac[i] = " + ac[i]);
+            c = ac[i].split("=");
+            //testing
+//            document.getElementById("op2").textContent = c[0];
+            if(c.length > 1){
+                cookieList[c[0].trim()] = unescape(c[1]);
+//                document.write(c[0].trim() + " : " + c[1] + "<br>");
+            }
+        }
+//        document.wirte(cookieList[cname]);
+        return cookieList[cname];
+    } 
+    
+    participant_id = getCookieByName("participantId");
+    document.write(participant_id);
+    
+</script>
+</body>
+
+</html>
+
+
+

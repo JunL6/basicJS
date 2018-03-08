@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>JS Array</h1>
+<p>unshift()</p>
+<button id="button" onclick="arr()">try it</button>
+<p id="demo"></p>
+
+    
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+    
+    
+function arr(){
+    console.log(contains(fruits, "Lemon"));
+    if (contains(fruits, "Lemon") == false){
+        fruits.unshift("Lemon");
+    } 
+    console.log(contains(fruits, "Lemon"));
+    document.getElementById("demo").innerHTML = fruits;
+}
+
+function contains(arr, element){
+    for (i in arr){
+        if (arr[i] == element){
+            return true;
+        }
+    }
+    return false;
+}
+    
+    
+    
+//arr = ["a", "b", "c", "d", "e"];
+//for (i in arr){
+//    console.log(arr[i]);
+//}
+    
+//验证while(0)是否会执行: 不会
+//学到： len--是先执行再减一
+//var len = 5;
+//while(len--){
+//    console.log(len);
+//}
+    
+//while(0){
+//    console.log("heelow");
+//}
+    
+
+</script>
+</body>
+</html> 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>2</h1>
+    <p id="output"></p>
+    <a href="test.html">TO test.html</a>
+    <a href="index.html">TO 1.html</a>
+    
+<script>
+    var participant_id = 40003;
+    //set cookies
+//    document.cookie = "username=John Doe";
+    
+    document.cookie = "a =" + participant_id + "; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    document.cookie = "b = 200; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    document.cookie = "c = 300; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+    
+    //show cookies
+    document.getElementById("output").textContent = document.cookie;
+//    document.write(document.cookie);
+    
+    
+</script>
+</body>
+
+</html>
+
+
+

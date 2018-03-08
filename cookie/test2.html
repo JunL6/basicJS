@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="op"></p>
+    <h3>op2</h3>
+    <p id="op2"></p>
+<!--    <form onsubmit="javascript : return false" action="aaa.html">-->
+    <form>
+        <input type="number" id="in" value="0">
+        <button type="button" id="btn_submit" onclick="setId()">Submit</button>
+    </form>
+        
+<script>
+    //把输入的数字存进cookie
+    var participant_id = 0;
+    function setId(){
+//        participant_id = ("#in").val();
+        participant_id = document.getElementById("in").value;
+//        document.getElementById("op").textContent = participant_id;
+        document.cookie = "participantId =" + participant_id + "; expires = Wed, 01 Jan 2020 00:00:00 GMT; path = /";
+        
+    }
+    
+
+</script>
+</body>
+
+</html>
+
+
+

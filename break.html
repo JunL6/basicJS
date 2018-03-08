@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<h1>break statement</h1>
+<hr>
+<input type="text" id="carName" value="BMW">
+<button onclick="checkCar()">check car</button>
+<p id="demo"></p>
+    
+<script>
+var cars = ['BMW', 'Ford', 'Peugeot'];
+var cars_lower = [];
+
+function arrayToLower(arr, arr_lower){
+    for(var i=0; i<arr.length; i++){
+        arr_lower.push(arr[i].toLowerCase());
+    }
+}
+arrayToLower(cars, cars_lower);
+console.log(10>9);
+    
+function checkCar(){
+    var carName = document.getElementById("carName").value;
+    var carInfo;
+    switch(carName.toLowerCase()) {
+        case cars_lower[0]:
+            carInfo = "German car";
+            break;
+        case cars_lower[1]:
+            carInfo = "American car";
+            break;
+        case cars_lower[2]:
+            carInfo = "French car";
+            break;
+        default:
+            carInfo = "Unknown car";
+            break;
+    }
+    
+    document.getElementById("demo").innerHTML = carInfo;
+}
+    
+
+</script>
+</body>
+</html> 
+

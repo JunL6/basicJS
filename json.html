@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+<button id='btn_next' onclick="nextEmployee()">Next</button>
+
+<p id="demo"></p>
+
+<script>
+var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);
+elem_demo = document.getElementById("demo");
+i = 0;
+elem_demo.innerHTML = obj.employees[i].firstName + " " + obj.employees[i].lastName;
+    
+function nextEmployee() {
+    if(i === 2) {
+        i = 0;
+    } else {
+        i = i + 1;
+    }
+//debugger;
+elem_demo.innerHTML = obj.employees[i].firstName + " " + obj.employees[i].lastName;
+}
+    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <p id="demo"></p>
+
+<script>
+//1. anonymous self-invoking function
+//2. argument property 
+elem_demo = document.getElementById("demo");
+(function (){
+    elem_demo.innerHTML = "Yoo"
+    console.log(arguments.length);
+})();
+
+function myfun(a, b) {
+    return a + b;
+}
+    
+//3. toString()
+console.log(myfun.toString());
+
+//4. arguments object
+function findMax() {
+    var max = -Infinity;
+    var i = 0;
+    for (; i<arguments.length; i++) {
+        if(arguments[i] > max) {
+            max = arguments[i];
+        }
+    }
+    return max;
+}
+    
+var m = findMax(2, 4, 11, 93, 232, 18, 892, 12);
+console.log("max: ", m);
+
+</script>
+    
+</body>

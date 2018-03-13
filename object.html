@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <p id="demo"></p>
+    
+    
+    
+<script>
+var txt = "";
+var person = {
+    firstName : "John",
+    lastName : "Doe",
+    age : 25
+};
+
+for (prop in person) {
+    txt = txt + person[prop] + " ";
+}
+    
+demo = document.getElementById("demo");
+demo.innerHTML = txt;
+//constructor
+function Person(first, last, age, eye) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eye = eye;
+    this.name = function() {
+      return this.firstName + " " + this.lastName;  
+    };
+}
+    
+var myDad = new Person("John", "Doe", 56, "brown");
+    
+demo.innerHTML = myDad.name();
+    
+</script>
+</body>

@@ -34,6 +34,20 @@ function Person(first, last, age, eye) {
 var myDad = new Person("John", "Doe", 56, "brown");
     
 demo.innerHTML = myDad.name();
+
+// object method definition inside the definition of the object
+var dog = {
+    legs : 4,
+    tail : 1,
+    name : "Dough",
+    bark() {
+//        console.log("hi");
+        return this.name;
+    }
+};
+    
+
+demo.innerHTML = dog.bark(); 
     
 </script>
 </body>

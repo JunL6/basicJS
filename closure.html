@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<p>Click the button to update the number</p>
+<button type="button" onclick="myFun()">Click</button>
+<p id="demo">0</p>
+    
+<script>
+var add = (function(){
+    var counter = 0;
+    return function(){
+        counter = counter + 1;
+        return counter;
+    }
+})();    
+
+function myFun(){
+    document.getElementById("demo").innerHTML = add();
+}
+    
+    
+    
+</script>    
+
+</body>

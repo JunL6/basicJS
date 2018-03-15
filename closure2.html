@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<p>click the button to change the number</p>
+<button type="button" onclick="myFun(1)">Add</button>
+<button type="button" onclick="myFun(2)">Sub</button>
+<p id="demo">0</p>
+    
+    
+
+<script>
+var changeNumber = (function(){
+    var counter = 0;
+    return function(commandNumber){
+        if(commandNumber === 1){
+            counter = counter + 1;
+        } else {
+            counter = counter - 1;
+        }
+            return counter;
+    }
+})();
+    
+function myFunAdd() { 
+    elemDemo = document.getElementById("demo");
+    var num = changeNumber(1);
+    elemDemo.innerHTML = num;
+}
+
+function myFunSub() { 
+    elemDemo = document.getElementById("demo");
+    var num = changeNumber(2);
+    elemDemo.innerHTML = num;
+}    
+    
+function myFun(commandNum) {
+    elemDemo = document.getElementById("demo");
+    var num = changeNumber(commandNum);
+    elemDemo.innerHTML = num;
+
+}
+    
+    
+    
+
+</script>
+</body>

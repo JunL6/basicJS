@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <head>
+    <title>closure 2</title>
 </head>
 <body>
 <p>click the button to change the number</p>
 <button type="button" onclick="myFun(1)">Add</button>
 <button type="button" onclick="myFun(2)">Sub</button>
 <p id="demo">0</p>
-    
+<p id="p2">uri</p>
     
 
 <script>
@@ -37,11 +38,12 @@ function myFunSub() {
 function myFun(commandNum) {
     elemDemo = document.getElementById("demo");
     var num = changeNumber(commandNum);
-    elemDemo.innerHTML = num;
-
+    elemDemo.innerHTML = Number(num);
+    console.log(typeof(num));
 }
     
-    
+document.getElementById("p2").innerHTML = document.URL;
+document.getElementById("p2").innerHTML = document.title;
     
 
 </script>

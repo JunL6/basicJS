@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+<style>
+    #container {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        background-color: aqua;
+    }
+    
+    #animate {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        background-color: saddlebrown;
+    }
+</style>
+</head>
+<body>
+<button type="button" onclick="startAnime()">Click to Start</button>
+<div id="container">
+    <div id="animate"></div>
+</div>
+
+<script>
+function startAnime() {
+    var elem = document.getElementById("animate");
+    var pos = 0;
+    var id_interval = setInterval(move, 5);
+    function move(){
+        if(pos == 360) {
+            clearInterval(id_interval);
+        } else {
+            pos++;
+            elem.style.left = pos.toString() + "px";
+            elem.style.top = pos.toString() + "px";
+        }
+    }
+}
+
+    
+    
+</script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

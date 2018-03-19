@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<div id="timer"></div>    
+
+<script>
+//function updateClock() {
+//    var now = new Date(), // current date
+//        months = ['January', 'February', '...']; // you get the idea
+//        time = now.getHours() + ':' + now.getMinutes(), // again, you get the idea
+//
+//        // a cleaner way than string concatenation
+//        date = [now.getDate(), 
+//                months[now.getMonth()],
+//                now.getFullYear()].join(' ');
+//
+//    // set the content of the element with the ID time to the formatted string
+//    document.getElementById('timer').innerHTML = [date, time].join(' / ');
+//
+//    // call this function again in 1000ms
+//    setTimeout(updateClock, 1000);
+//}
+//updateClock(); // initial call
+    
+//(function(){
+//    var now = new Date();
+//    console.log(typeof(now));
+//    document.getElementById("timer").innerHTML = now;
+//})();    
+
+function makeDoubleDigit(i){
+    if(i < 10){
+        i = '0' + i;
+    }
+    return i;
+}
+    
+function showTime(){
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    //add zero
+    m = makeDoubleDigit(m);
+    s = makeDoubleDigit(s);
+    //put the hour mine seconds together
+    var currentTime = h + ', ' + m + ", " + s;
+    console.log(currentTime);
+    //show the time in 
+    document.getElementById("timer").innerHTML = currentTime;
+    setTimeout(showTime, 1000);
+}
+    
+
+showTime();
+</script>
+</body>

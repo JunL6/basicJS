@@ -70,14 +70,18 @@ function openCity(evt, cityName) {
 // 2. lowhight all the tabs - -remove the class " active" from all the tab className
     var tabs = document.getElementsByClassName("tablinks");
     for(var i=0; i<tabs.length; i++) {
-        tabs[i].className.replace(' active', '');
+        tabs[i].className = tabs[i].className.replace(' active', '');
+        console.log(tabs[i].className);
     }
     
 // 3. highlight the current tab -- add " active" to the current tab
-    
+    //????
+    evt.currentTarget.className += ' active';
     
     
 // 4. display the tabcontent for the current tab
+    document.getElementById(cityName).style.display = 'block';
+    
 }
 
 // show the tabcontent for the first tab as default

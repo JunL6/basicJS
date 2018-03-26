@@ -7,6 +7,7 @@
         font-family: Arial;
     }
     
+/*    for tabs*/
     .tab {
         overflow: hidden;
         background-color: #f2f3f4;
@@ -29,10 +30,17 @@
         background-color: #bbb;
     }
     
+/*    for tabcontent*/
     .tabcontent {
         border: 1px solid #ddd;
         border-top: none;
         padding: 8px 16px;
+        animation: fadeEffect 2s;
+    }
+    
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity:  1;}
     }
     
 </style>
@@ -71,7 +79,7 @@ function openCity(evt, cityName) {
     var tabs = document.getElementsByClassName("tablinks");
     for(var i=0; i<tabs.length; i++) {
         tabs[i].className = tabs[i].className.replace(' active', '');
-        console.log(tabs[i].className);
+//        console.log(tabs[i].className);
     }
     
 // 3. highlight the current tab -- add " active" to the current tab

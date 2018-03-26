@@ -8,7 +8,7 @@
     }
     
     .tab {
-/*        overflow: hidden;*/
+        overflow: hidden;
         background-color: #f2f3f4;
         border: 1px solid #ddd;
     }
@@ -19,6 +19,20 @@
         border: none;
         font-size: 18px;
         padding: 14px 16px;
+    }
+    
+    .tab button:hover {
+        background-color: #ccc;
+    }
+    
+    .tab button.active {
+        background-color: #bbb;
+    }
+    
+    .tabcontent {
+        border: 1px solid #ddd;
+        border-top: none;
+        padding: 8px 16px;
     }
     
 </style>
@@ -47,18 +61,27 @@
     
 <script>
 function openCity(evt, cityName) {
+// 1. hide all the tabcontent -- set all the tabcontent to display:none
+    var tabContents = document.getElementsByClassName("tabcontent");
+    for(var i=0; i<tabContents.length; i++) {
+        tabContents[i].style.display = "none";
+    }
     
-// hide all the tabcontent -- set all the tabcontent to display:none
+// 2. lowhight all the tabs - -remove the class " active" from all the tab className
+    var tabs = document.getElementsByClassName("tablinks");
+    for(var i=0; i<tabs.length; i++) {
+        tabs[i].className.replace(' active', '');
+    }
     
-// lowhight all the tabs - -remove the class " active" from all the tab className
+// 3. highlight the current tab -- add " active" to the current tab
     
-// highlight the current tab -- add " active" to the current tab
     
-// display the tabcontent for the current tab
+    
+// 4. display the tabcontent for the current tab
 }
 
 // show the tabcontent for the first tab as default
-    
+    document.getElementsByClassName("tablinks")[0].click();
 
 </script>
     

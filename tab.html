@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>tabs demo</title>
+</head>
+<style>
+    body {
+        font-family: Arial;
+    }
+    
+    .tab {
+/*        overflow: hidden;*/
+        background-color: #f2f3f4;
+        border: 1px solid #ddd;
+    }
+    
+    .tab button {
+        float: left;
+        background-color: inherit;
+        border: none;
+        font-size: 18px;
+        padding: 14px 16px;
+    }
+    
+</style>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England</p>
+    </div>
+    
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital city of France</p>
+    </div>
+    
+    <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital city of Japan</p>
+    </div>
+
+    
+<script>
+function openCity(evt, cityName) {
+    
+// hide all the tabcontent -- set all the tabcontent to display:none
+    
+// lowhight all the tabs - -remove the class " active" from all the tab className
+    
+// highlight the current tab -- add " active" to the current tab
+    
+// display the tabcontent for the current tab
+}
+
+// show the tabcontent for the first tab as default
+    
+
+</script>
+    
+</body>

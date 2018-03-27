@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style_progressBar.css">
+</head>
+<body>
+    <h3>demo for progress bar</h3>
+    <div class="container">
+        <div id="progress_container">
+            <div id="progress"></div>
+        </div>
+    </div>
+    <button type="button" onclick="increase()">Click to progress</button>
+    
+    <div class="form">
+        <input type="text" id="input">
+        <button type="button" onclick="setProgress()">set</button>
+    </div>
+    
+<script>
+var INCREMENT = 10;
+function increase() {
+    // 1. get the current width
+    var elem_progress = document.getElementById("progress");
+    var elem_progressBar =document.getElementById("progress_container");
+    var progressWidth = elem_progress.offsetWidth;
+    var progressBarWidth = elem_progressBar.offsetWidth;
+    var wid = Math.round((progressWidth/progressBarWidth)*100);
+//    console.log(wid);
+    // 2. increase the wid, stop when it's  100
+    if(wid >= 100){
+        wid = 0;
+    } else {
+        wid += INCREMENT;}
+    
+    // 3. increase the progress
+    elem_progress.style.width = wid + "%";
+}
+
+function setProgress() {
+    var widInput = document.getElementById("input").value;
+    // 1. if the input is empty, set wid to 0
+    if(widInput == "") {
+        widInput = 0;
+//        console.log("aaa");
+    }
+    console.log(widInput);
+    
+    var elem_progress = document.getElementById("progress");
+    elem_progress.style.width = widInput + "%";
+    
+}
+    
+    
+</script>
+</body>

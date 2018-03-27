@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+
+.container {
+    padding: 15px;
+}
+
+#progress_container {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#progress {
+    width: 10%;
+    height: 30px;
+    background-color: cornflowerblue;
+}
+
+#btn_click {
+    display: block;
+    align-items: center;
+}
+
+.form {
+    padding-top: 20px;
+}
+
+.form input {
+    width: 30px;
+}

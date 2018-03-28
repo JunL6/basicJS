@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+
+    
+<script>
+/* leason 3: filter */
+var products = [
+    { name: 'cucumber', type: 'vegetable' },
+    { name: 'banana', type: 'fruit' },
+    { name: 'celery', type: 'vegetable' },
+    { name: 'orange', type: 'fruit' }
+];
+
+var filteredProducts = [];
+var KEYWORD = 'vegetable';
+
+filteredProducts = products.filter(function(product){
+    return product.type === KEYWORD;
+});
+
+console.log(filteredProducts);
+    
+</script>
+</body>

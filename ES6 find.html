@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+
+    
+<script>
+var ladders = [
+    { id: 1, height: 20 },
+    { id: 3, height: 25}
+];
+    
+function findWhere(array, criteria) {
+    var propertyName = Object.keys(criteria)[0];
+//    console.log(propertyName);
+    return array.find(function(element) {
+//        console.log(criteria[propertyName]);
+        return element[propertyName] === criteria[propertyName];
+    });
+}
+
+var result = findWhere(ladders, { height: 25 });
+console.log(result);
+    
+    
+</script>
+</body>

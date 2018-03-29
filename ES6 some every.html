@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+
+    
+<script>
+var MIN_LEN = 6;    
+    
+function Field(value) {
+    this.value = value;
+    this.validate = function() {
+        return this.value.length > MIN_LEN;
+    }
+}
+    
+var username = new Field('2cool');
+var password = new Field('my_password');
+var birthdate = new Field('10/10/2020');
+
+var fields = [username, password, birthdate];
+
+var result = fields.every(function(field){
+    return field.validate();
+});
+    
+console.log(result);
+    
+    
+var numbers = [ 2, 40, 59, 32, 12 ];
+var sum = 0;    
+    
+var r2 = numbers.reduce(function(previous, number){
+   return previous  + number;
+});
+    
+console.log(r2);
+    
+    
+</script>
+</body>

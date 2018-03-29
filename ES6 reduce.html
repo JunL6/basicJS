@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+
+    
+<script>
+function balancedParens(str) {
+    return !str.split('').reduce(function(previous, char){
+        if(previous < 0) {
+            return previous;
+        }
+        if(char === '(') {
+            return ++previous;
+        }
+        if(char === ')') {
+            return --previous;
+        }
+        
+    }, 0);
+}
+    
+console.log(balancedParens("(((a)))"));
+
+/* trip */
+var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+
+var totalDistance = trips.reduce(function(previous, trip){
+    return previous + trip.distance;
+}, 0);
+console.log(totalDistance);
+    
+
+/* desk */
+var desks = [
+  { type: 'sitting' },
+  { type: 'standing' },
+  { type: 'sitting' },
+  { type: 'sitting' },
+  { type: 'standing' }
+];
+
+var deskTypes = desks.reduce(function(previous, desk) {
+    if(desk.type === 'sitting') {
+        previous.sitting = previous.sitting + 1;
+        return previous;
+    }
+    if(desk.type === 'standing') {
+        previous.standing = previous['standing'] + 1;
+        return previous;
+    }
+    return previous;
+}, { sitting: 0, standing: 0 });    
+
+//var deskTypes = desks.reduce(function(acc, curr) {
+//    acc[curr.type] += 1;
+//    return acc;
+//}, { sitting: 0, standing: 0 });
+    
+console.log(deskTypes);
+    
+    
+    
+</script>
+</body>

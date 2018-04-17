@@ -40,17 +40,29 @@ var desks = [
   { type: 'standing' }
 ];
 
+//var deskTypes = desks.reduce(function(previous, desk) {
+//    if(desk.type === 'sitting') {
+//        previous.sitting = previous.sitting + 1;
+//        return previous;
+//    }
+//    if(desk.type === 'standing') {
+//        previous.standing = previous['standing'] + 1;
+//        return previous;
+//    }
+//    return previous;
+//}, { sitting: 0, standing: 0 });    
+    
+    
 var deskTypes = desks.reduce(function(previous, desk) {
     if(desk.type === 'sitting') {
-        previous.sitting = previous.sitting + 1;
+        previous.sitting += 1;
         return previous;
     }
     if(desk.type === 'standing') {
-        previous.standing = previous['standing'] + 1;
+        previous.standing += 1;
         return previous;
     }
-    return previous;
-}, { sitting: 0, standing: 0 });    
+}, { sitting: 0, standing: 0 });
 
 //var deskTypes = desks.reduce(function(acc, curr) {
 //    acc[curr.type] += 1;

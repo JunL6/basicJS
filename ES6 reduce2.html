@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script>
+var a = [ 1, 1, 2, 3, 4, 4 ];
+
+function unique(array) {
+    var result = [];
+    
+    result = array.reduce(function(previous, num){
+        if(previous.find(function(number) {
+            return number === num;
+        }) === undefined) {
+            previous.push(num)
+        }
+        
+        return previous;
+    }, []);
+    
+    return result;
+    
+}
+    
+    
+//function unique(array) {
+//  return array.reduce(function(previous, item){
+//     if(!previous.find(i => {return i===item})){
+//         previous.push(item);
+//     }
+//     return previous;
+//  },[]);
+//}
+    
+//console.log(unique(a));
+
+console.log(unique(a));
+</script>
+</body>

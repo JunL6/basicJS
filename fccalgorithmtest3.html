@@ -1,0 +1,114 @@
+<html>
+<head>
+</head>
+<body>
+    
+<script>
+/////     
+
+//const str = "stringg";
+//let a  = str.lastIndexOf("g");
+//console.log(a);
+//console.log(str.length);
+    
+//function confirmEnding(str, target) {
+//    let a = str.lastIndexOf(target);
+//    let b = str.length;
+//    let c = target.length;
+////    console.log(a, b, c);
+//    if(str.lastIndexOf(target) === (str.length-target.length)) {
+//        return true;
+//    } else {
+//        return false;
+//    }
+//}
+//    
+////console.log(confirmEnding("Bastian", 'n'));
+//console.log(confirmEnding("He has to give me a new name", "name"));
+    
+    
+/////// truncate a string
+//function truncateString(str, num) {
+//  // Clear out that junk in your trunk
+//  var result = '';
+//  if(num==str.length) {
+//    result = str;
+//  } else if(num<=3) {
+//    result = str.substr(0, num);
+//  } else {
+//    result = str.substr(0, num-3);
+//  }
+//  return result+"...";
+//}
+//
+//truncateString("A-tisket a-tasket A green and yellow basket", 11);
+    
+//######### chunky monkey
+//## 1. not using slice()
+//function chunkArrayInGroups(arr, size) {
+////   **** didn't consider the scenario that when the length last subArray is not exactly 'size'
+//    let result = [];
+//    let subArr = [];
+//    let i = 0;
+//    arr.forEach((elem, index)=> {
+////        console.log(elem);
+////        console.log('i: ' + i);
+//        subArr.push(elem);
+//        i += 1;
+//        if(i >= size) {
+//            result.push(subArr);
+////            console.log('subArr');
+////            console.log(subArr);
+////            console.log('result');
+////            console.log(result);
+//            i = 0;
+//            subArr = [];
+//        }
+//        if(index == (arr.length-1) && subArr.length>0) {
+//            result.push(subArr);
+//        }
+//    });
+////    console.log(result);
+//    return result;
+//}
+
+//let  out = chunkArrayInGroups([1, 2, 3, 4, 5, 6], 2);
+//console.log(out);
+//let  out2 = chunkArrayInGroups([1, 2, 3, 4, 5, 6, 7], 2);
+//console.log(out2);
+    
+////### 2. using slice()
+function chunkArrayInGroups(arr, size) {
+    let result = [];
+    for(let i = 0; i<arr.length; i+=size) {
+        result.push(arr.slice(i, i+size));
+    }
+    return result;
+}
+
+
+let  out = chunkArrayInGroups([1, 2, 3, 4, 5, 6], 2);
+console.log(out);
+let  out2 = chunkArrayInGroups([1, 2, 3, 4, 5, 6, 7], 2);
+console.log(out2);
+    
+// join()
+let cars = ['Sab', 'Volvo', 'BMW'];
+console.log(cars.slice(1, 5));
+//2d array
+//let dAr = [];
+//let a = [];
+//a.push('a');
+//a.push('b');
+//dAr.push(a);
+//let b = [];
+//b.push('c');
+//b.push('d');
+//dAr.push(b);
+//console.log(dAr);
+//let dAr2 = [['a', 'b'], ['c', 'd']];
+//console.log(dAr2);
+    
+</script>
+</body>
+</html>
